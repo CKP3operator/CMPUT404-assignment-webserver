@@ -97,7 +97,6 @@ if __name__ == "__main__":
 
     # Activate the server; this will keep running until you
     # interrupt the program with Ctrl-C
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        server.server_close()
+    
+    server.serve_forever()
+    
