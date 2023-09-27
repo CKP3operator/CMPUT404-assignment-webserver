@@ -62,7 +62,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
                 if os.path.exists(index) and os.path.isfile(index):
                     with open(index, 'rb') as file:
                         body = file.read()
-                    headers = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\nContent-Length: {len(body)}\r\n"
+                    headers = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\nContent-Length: {len(body)}\r\n\r\n"
                     response = headers.encode('utf-8') + body
                     self.request.sendall(response)
                 else:
@@ -76,7 +76,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
                 if os.path.exists(abs_path) and os.path.isfile(abs_path):
                     with open(abs_path, 'rb') as file:
                         body = file.read()
-                    headers = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\nContent-Length: {len(body)}\r\n"
+                    headers = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\nContent-Length: {len(body)}\r\n\r\n"
                     response = headers.encode('utf-8') + body
                     self.request.sendall(response)
                 else:
